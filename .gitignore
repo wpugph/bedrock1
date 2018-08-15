@@ -1,7 +1,9 @@
 # Application
-web/app/plugins/*
+#version control plugins in pantheon
+#web/app/plugins/*
 !web/app/plugins/.gitkeep
-web/app/mu-plugins/*/
+#version control mu plugins in pantheon
+#web/app/mu-plugins/*/
 web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
