@@ -15,32 +15,10 @@ Env::init();
  * Use Dotenv to set required environment variables and load .env file in root
  */
 $dotenv = new Dotenv\Dotenv($root_dir);
-
-define('DB_NAME', $_ENV['DB_NAME']);
-
-    /** MySQL database username */
-    define('DB_USER', $_ENV['DB_USER']);
-
-    /** MySQL database password */
-    define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
-
-    /** MySQL hostname; on Pantheon this includes a specific port number. */
-    define('DB_HOST', $_ENV['DB_HOST'] . ':' . $_ENV['DB_PORT']);
-
-    /** Database Charset to use in creating database tables. */
-    define('DB_CHARSET', 'utf8');
-
-    /** The Database Collate type. Don't change this if in doubt. */
-    define('DB_COLLATE', '');
-
+if (file_exists($root_dir . '/.env')) {
     $dotenv->load();
     $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
-
-
-// if (file_exists($root_dir . '/.env')) {
-//     $dotenv->load();
-//     $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
-// }
+}
 
 /**
  * Set up our global environment constant and load its config first
