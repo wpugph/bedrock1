@@ -7,7 +7,7 @@ web/app/uploads/*
 !web/app/uploads/.gitkeep
 
 # WordPress
-web/wp
+#web/wp
 web/.htaccess
 
 # Dotenv
@@ -16,5 +16,5 @@ web/.htaccess
 !.env.example
 
 # Composer
-vendor/*
+#vendor/*
 !vendor/.gitkeep
